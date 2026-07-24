@@ -118,7 +118,8 @@ password.addEventListener("keydown", (event) => {
   }
 });
 
-scheduleBirthdayEvent();
+// scheduleBirthdayEvent();
+showBirthdayEvent();
 
 function scheduleBirthdayEvent() {
   const now = new Date();
