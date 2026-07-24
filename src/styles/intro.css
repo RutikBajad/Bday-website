@@ -1,0 +1,19 @@
+.intro-screen {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #090b1a;
+  z-index: 999;
+}
+
+.intro-text {
+  color: white;
+  font-size: 3rem;
+  text-align: center;
+  opacity: 0;
+  max-width: 700px;
+  line-height: 1.5;
+  padding: 20px;
+}
