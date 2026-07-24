@@ -197,24 +197,15 @@ function showBirthdayEvent() {
 
 audio.play()
   .then(() => {
+    console.log("✅ Audio is playing");
     scheduleReturnToHome();
   })
-  .catch(() => {
-    console.warn("Autoplay blocked.");
-
-    const btn = document.createElement("button");
-    btn.textContent = "🎵 Tap to Start the Birthday Surprise";
-    btn.className = "play-music-btn";
-
-    document.querySelector(".event-card").appendChild(btn);
-
-    btn.addEventListener("click", async () => {
-      await audio.play();
-      btn.remove();
-      scheduleReturnToHome();
-    });
+  .catch((err) => {
+    console.error("❌ Audio play failed:", err);
+    scheduleReturnToHome();
   });
 
+  
 function startIntro() {
   document.querySelector(".login-screen").remove();
   document.querySelector("#app").innerHTML = `
