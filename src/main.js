@@ -67,7 +67,7 @@ const button = document.querySelector("#unlockBtn");
 const message = document.querySelector("#message");
 const starsContainer = document.querySelector(".stars");
 
-const demoBirthdayNow = false;
+const demoBirthdayNow = true;
 const birthdayEventTime = demoBirthdayNow
   ? new Date()
   : new Date(2026, 6, 25, 0, 0, 0);
