@@ -183,17 +183,37 @@ function showBirthdayEvent() {
     }, 30 * 1000); // 30 seconds
   }
 
-  // Autoplay the birthday song immediately.
-  audio
-    .play()
-    .then(() => scheduleReturnToHome())
-    .catch(() => {
-      console.warn(
-        "Birthday song could not autoplay. Add the song file at ./assets/images/happybirthdaysong.mp3 and allow audio playback for this page.",
-      );
+//   // Autoplay the birthday song immediately.
+//   audio
+//     .play()
+//     .then(() => scheduleReturnToHome())
+//     .catch(() => {
+//       console.warn(
+//         "Birthday song could not autoplay. Add the song file at ./assets/images/happybirthdaysong.mp3 and allow audio playback for this page.",
+//       );
+//       scheduleReturnToHome();
+//     });
+// }
+
+audio.play()
+  .then(() => {
+    scheduleReturnToHome();
+  })
+  .catch(() => {
+    console.warn("Autoplay blocked.");
+
+    const btn = document.createElement("button");
+    btn.textContent = "🎵 Tap to Start the Birthday Surprise";
+    btn.className = "play-music-btn";
+
+    document.querySelector(".event-card").appendChild(btn);
+
+    btn.addEventListener("click", async () => {
+      await audio.play();
+      btn.remove();
       scheduleReturnToHome();
     });
-}
+  });
 
 function startIntro() {
   document.querySelector(".login-screen").remove();
