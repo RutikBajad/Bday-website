@@ -205,7 +205,7 @@ audio.play()
     scheduleReturnToHome();
   });
 
-  
+
 function startIntro() {
   document.querySelector(".login-screen").remove();
   document.querySelector("#app").innerHTML = `
@@ -615,4 +615,4 @@ function createBalloons() {
 
     document.body.appendChild(balloon);
   }
-}
+}}
