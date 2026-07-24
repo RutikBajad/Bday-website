@@ -193,7 +193,7 @@ function showBirthdayEvent() {
 //       );
 //       scheduleReturnToHome();
 //     });
-// }
+}
 
 audio.play()
   .then(() => {
@@ -615,4 +615,4 @@ function createBalloons() {
 
     document.body.appendChild(balloon);
   }
-}}
+}
