@@ -70,7 +70,7 @@ const starsContainer = document.querySelector(".stars");
 const demoBirthdayNow = false;
 const birthdayEventTime = demoBirthdayNow
   ? new Date()
-  : new Date(2026, 6, 25, 0, 0, 0);
+  : new Date(2026, 6, 25, 0, 10, 0);
 const birthdayEventWindowMs = 5 * 60 * 1000;
 
 function createShootingStar() {
