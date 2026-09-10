@@ -67,11 +67,11 @@ const button = document.querySelector("#unlockBtn");
 const message = document.querySelector("#message");
 const starsContainer = document.querySelector(".stars");
 
-const demoBirthdayNow = true;
+const demoBirthdayNow = false;
 const birthdayEventTime = demoBirthdayNow
   ? new Date()
   : new Date(2026, 6, 25, 0, 0, 0);
-const birthdayEventWindowMs = 0; // event triggers only at the exact scheduled time
+const birthdayEventWindowMs = 5 * 60 * 1000;
 
 function createShootingStar() {
   const shooting = document.createElement("div");
@@ -118,8 +118,7 @@ password.addEventListener("keydown", (event) => {
   }
 });
 
-// scheduleBirthdayEvent();
-showBirthdayEvent();
+scheduleBirthdayEvent();
 
 function scheduleBirthdayEvent() {
   const now = new Date();
@@ -157,7 +156,7 @@ function showBirthdayEvent() {
           <source src="${dancingVideoUrl}" type="video/mp4" />
           Your browser does not support embedded videos.
         </video>
-        <audio id="birthdayAudio"></audio>
+        <audio id="birthdayAudio" loop></audio>
       </div>
     </section>
   `;
@@ -169,6 +168,7 @@ function showBirthdayEvent() {
     import.meta.url,
   ).href;
   audio.volume = 0.7;
+  audio.loop = true;
 
   let playbackTimeoutId = null;
   function scheduleReturnToHome() {
@@ -180,31 +180,14 @@ function showBirthdayEvent() {
         /* ignore */
       }
       showHome();
-    }, 30 * 1000); // 30 seconds
+    }, birthdayEventWindowMs);
   }
 
-//   // Autoplay the birthday song immediately.
-//   audio
-//     .play()
-//     .then(() => scheduleReturnToHome())
-//     .catch(() => {
-//       console.warn(
-//         "Birthday song could not autoplay. Add the song file at ./assets/images/happybirthdaysong.mp3 and allow audio playback for this page.",
-//       );
-//       scheduleReturnToHome();
-//     });
+  audio
+    .play()
+    .then(() => scheduleReturnToHome())
+    .catch(() => scheduleReturnToHome());
 }
-
-audio.play()
-  .then(() => {
-    console.log("✅ Audio is playing");
-    scheduleReturnToHome();
-  })
-  .catch((err) => {
-    console.error("❌ Audio play failed:", err);
-    scheduleReturnToHome();
-  });
-
 
 function startIntro() {
   document.querySelector(".login-screen").remove();
@@ -215,9 +198,10 @@ function startIntro() {
   `;
   const text = document.querySelector(".intro-text");
   const messages = [
-    "Hey...",
-    "I made something just for you.",
-    "Happy Birthday ❤️",
+    "My Dearest Husband,",
+    "I made this little surprise to celebrate you and the love you bring to our family.",
+    "Every moment with you and our chotu is precious to me.",
+    "Happy Birthday, my love. ❤️",
   ];
   let i = 0;
   function nextMessage() {
@@ -352,10 +336,7 @@ function launchConfetti() {
   })();
 }
 
-const surpriseMessage = `Happy birthday to an absolute angel. You’re a blessing to everyone who knows you!
-
-Wishing you a year full of love, laughter, and joy. You deserve everything the world has to offer!
-`;
+const surpriseMessage = siteData.message;
 let typingTimer = null;
 let typingIndex = 0;
 
@@ -388,7 +369,7 @@ function showHome() {
             <div class="letter-body">
               <h2>Dear ${siteData.name},</h2>
               <p class="typing-text"></p>
-              <p class="letter-sign">With love,<br/>Rutik</p>
+              <p class="letter-sign">With all my love,<br/>Your wife ❤️</p>
             </div>
           </div>
         </div>
@@ -410,7 +391,7 @@ function showHome() {
 
         <div class="gallery-link-wrap">
           <button id="viewGalleryBtn" class="gallery-view-btn">
-            View Her Images & Sticker
+            View Our Memories ❤️
           </button>
         </div>
     </section>
@@ -433,42 +414,36 @@ function showHome() {
 }
 
 function showGalleryPage() {
-  const stickerUrl = new URL("./assets/images/Sticker.24 PM.ʧ", import.meta.url)
-    .href;
-  const photo1Url = new URL("./assets/images/bday1.jpeg", import.meta.url).href;
-  const photo2Url = new URL("./assets/images/bday2.jpeg", import.meta.url).href;
-  const photo3Url = new URL("./assets/images/bday3.jpeg", import.meta.url).href;
-  const photo4Url = new URL("./assets/images/bday4.jpeg", import.meta.url).href;
+  const photo1Url = new URL("./assets/images/Bday1.jpeg", import.meta.url).href;
+  const photo2Url = new URL("./assets/images/Bday2.jpeg", import.meta.url).href;
+  const photo3Url = new URL("./assets/images/Bday3.jpeg", import.meta.url).href;
+  const photo4Url = new URL("./assets/images/Bday4.jpeg", import.meta.url).href;
 
   document.querySelector("#app").innerHTML = `
     <section class="gallery-page">
       <button id="backHomeBtn" class="gallery-back-btn">Back</button>
 
       <div class="gallery-layout">
-        <div class="gallery-sticker-outside">
-          <img src="${stickerUrl}" alt="Sticker" class="sticker-image" />
-        </div>
-
         <div class="gallery-card">
           <div class="gallery-header">
             <div>
-              <h1>Her Gallery</h1>
-              <p class="gallery-intro">A special page for your photos.</p>
+              <h1>Our Memories</h1>
+              <p class="gallery-intro">Some of my favorite moments with you.</p>
             </div>
           </div>
 
           <div class="gallery-grid">
             <div class="photo-card">
-              <img src="${photo1Url}" alt="Birthday photo 1" />
+              <img src="${photo1Url}" alt="Our memory 1" />
             </div>
             <div class="photo-card">
-              <img src="${photo2Url}" alt="Birthday photo 2" />
+              <img src="${photo2Url}" alt="Our memory 2" />
             </div>
             <div class="photo-card">
-              <img src="${photo3Url}" alt="Birthday photo 3" />
+              <img src="${photo3Url}" alt="Our memory 3" />
             </div>
             <div class="photo-card">
-              <img src="${photo4Url}" alt="Birthday photo 4" />
+              <img src="${photo4Url}" alt="Our memory 4" />
             </div>
           </div>
         </div>
@@ -493,8 +468,7 @@ function closeSurpriseCard() {
 
 // Setup gift interactions after DOM exists
 function setupGiftInteractions() {
-  const giftUrl = new URL("./assets/images/birthday-gift.jpg", import.meta.url)
-    .href;
+  const giftUrl = new URL("./assets/images/Gift.jpeg", import.meta.url).href;
   const giftSvg = document.getElementById("giftSvg");
   const giftImg = document.getElementById("giftImage");
   const closeBtn = document.getElementById("closeGiftBtn");
@@ -602,7 +576,7 @@ function animateHome() {
 }
 
 function createBalloons() {
-  for (let i = 0; i < 15; i++) {
+  for (let i = 0; i < 8; i++) {
     const balloon = document.createElement("div");
 
     balloon.className = "balloon";

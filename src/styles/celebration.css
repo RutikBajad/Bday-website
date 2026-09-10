@@ -1,61 +1,67 @@
-.celebration{
+.celebration {
+  width: 100vw;
+  height: 100vh;
 
-    width:100vw;
-    height:100vh;
+  display: flex;
+  flex-direction: column;
 
-    display:flex;
-    flex-direction:column;
+  justify-content: center;
+  align-items: center;
 
-    justify-content:center;
-    align-items:center;
+  background: radial-gradient(circle, #24114f, #090b1a);
 
-    background:
-    radial-gradient(circle,#24114f,#090B1A);
-
-    overflow:hidden;
-
+  overflow: hidden;
 }
 
-.birthday-title{
+.birthday-title {
+  color: white;
 
-    color:white;
+  font-size: 5rem;
 
-    font-size:5rem;
-
-    opacity:0;
-
+  opacity: 0;
 }
 
-.birthday-name{
+.birthday-name {
+  color: #ff82c3;
 
-    color:#ff82c3;
+  margin-top: 20px;
 
-    margin-top:20px;
+  font-size: 2rem;
 
-    font-size:2rem;
-
-    opacity:0;
-
+  opacity: 0;
 }
 
-#continue{
+#continue {
+  margin-top: 60px;
 
-    margin-top:60px;
+  padding: 18px 42px;
 
-    padding:18px 42px;
+  border: none;
 
-    border:none;
+  border-radius: 50px;
 
-    border-radius:50px;
+  font-size: 18px;
 
-    font-size:18px;
+  cursor: pointer;
 
-    cursor:pointer;
+  background: #ff5fa2;
 
-    background:#ff5fa2;
+  color: white;
 
-    color:white;
+  opacity: 0;
+}
 
-    opacity:0;
+@media (max-width: 520px) {
+  .birthday-title {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+    text-align: center;
+    line-height: 1.1;
+    padding: 0 16px;
+  }
 
+  #continue {
+    margin-top: 40px;
+    padding: 15px 28px;
+    font-size: 16px;
+  }
 }

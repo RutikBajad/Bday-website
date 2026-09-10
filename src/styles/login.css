@@ -191,3 +191,25 @@ message {
     opacity: 0;
   }
 }
+
+@media (max-width: 520px) {
+  .login-card {
+    width: calc(100vw - 32px);
+    padding: 32px 20px;
+    border-radius: 22px;
+  }
+
+  .login-card h1 {
+    font-size: 2rem;
+  }
+
+  .moon {
+    width: 72px;
+    height: 72px;
+  }
+
+  input,
+  .login-btn {
+    box-sizing: border-box;
+  }
+}
