@@ -10,7 +10,8 @@
 
 .intro-text {
   color: white;
-  font-size: 3rem;
+  font-family: "Pangolin", "Georgia", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
   text-align: center;
   opacity: 0;
   max-width: 700px;

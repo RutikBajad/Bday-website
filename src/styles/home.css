@@ -61,7 +61,7 @@
   box-shadow: 0 22px 60px rgba(0, 0, 0, 0.28);
   text-align: left;
   animation: pop 0.35s ease;
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: "Pangolin", "Georgia", "Times New Roman", serif;
   color: #4b3426;
   overflow: hidden;
 }
@@ -198,12 +198,12 @@
   color: #f6d7ff;
   margin-bottom: 16px;
   font-size: 2.2rem;
-  font-family: "Palatino Linotype", "Book Antiqua", serif;
+  font-family: "Pangolin", "Palatino Linotype", "Book Antiqua", serif;
 }
 
 .typing-text {
   color: #e9d8ff;
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   line-height: 1.85;
   min-height: 170px;
   white-space: pre-wrap;
@@ -214,7 +214,7 @@
 .letter-sign {
   margin-top: 18px;
   font-style: italic;
-  font-size: 0.98rem;
+  font-size: 1.05rem;
   color: #e9d8ff;
 }
 
