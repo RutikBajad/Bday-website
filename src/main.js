@@ -336,7 +336,7 @@ function launchConfetti() {
   })();
 }
 
-const surpriseMessage = siteData.message;
+const surpriseMessage = siteData.popupMessage;
 let typingTimer = null;
 let typingIndex = 0;
 
@@ -369,7 +369,7 @@ function showHome() {
             <div class="letter-body">
               <h2>Dear ${siteData.name},</h2>
               <p class="typing-text"></p>
-              <p class="letter-sign">With all my love,<br/>Your wife ❤️</p>
+              <p class="letter-sign">With all our love,<br/>Simeen and Hamza ❤️</p>
             </div>
           </div>
         </div>

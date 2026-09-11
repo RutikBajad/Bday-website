@@ -9,6 +9,16 @@ export const siteData = {
 
   buttonText: "Unlock ❤️",
 
+  popupMessage: `
+Happy Birthday to the most amazing husband and the best papa! ❤️
+Thank you for filling our lives with love, care, and happiness.
+You are not just my husband, but my best friend, my biggest support, and the most wonderful father to our little baby. Watching you love and care for our baby melts my heart.
+Thank you for all the love, patience, and happiness you bring into our lives. I am so grateful to walk through life with you.
+This is from our Hamzu...
+"Happy Birthday Papa! 🎂 I may be tiny, but I love you with all my little heart. Thank you for making me smile, cuddle me, and love me. ❤️"
+We love you endlessly and wish you a year full of happiness, success, and beautiful family moments. 🥰🎉
+  `,
+
   message: `
   My Dearest Husband,
 Happy Birthday, my love. ❤️
